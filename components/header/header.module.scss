@@ -1,10 +1,22 @@
-.left-header {
-  flex: 1;
+.layout {
   display: flex;
-  align-items: center;
-  flex-direction: row;
-}
+  flex-direction: column;
+  height: 100vh;
 
-.right-header {
-  flex: 0;
+  .left-header {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+  }
+
+  .right-header {
+    flex: 0;
+  }
+  .page {
+    height: 100%;
+    padding: 8px;
+    display: flex;
+    flex-direction: column;
+  }
 }

@@ -2,14 +2,18 @@ import { PrismaClient } from "@prisma/client";
 
 const prisma = new PrismaClient();
 
-// DELETE /api/post/:id
+// POST /api/teams
 export default async function handle(req, res) {
-  const postId = req.query.id;
-  if (req.method === "DELETE") {
-    const post = await prisma.post.delete({
-      where: { id: Number(postId) },
+  const json = JSON.parse(req.body);
+  if (req.method === "POST") {
+    const team = await prisma.team.create({
+      data: {
+        name: json.name,
+        Car: undefined,
+        users: undefined,
+      },
     });
-    res.json(post);
+    return res.json(team);
   } else {
     throw new Error(
       `The HTTP ${req.method} method is not supported at this route.`

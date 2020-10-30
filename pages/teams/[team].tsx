@@ -1,4 +1,3 @@
-import pageStyles from "../styles/page.module.scss";
 import React from "react";
 import { GetServerSidePropsContext, GetStaticProps } from "next";
 import Layout from "../../components/Layout";
@@ -26,12 +25,10 @@ type Props = {
 export default function Home(props: Props) {
   return (
     <Layout>
-      <div className={pageStyles["page"]}>
-        <Typography variant="h3">
-          {props.teamID}
-          {props.team.name}
-        </Typography>
-      </div>
+      <Typography variant="h3">
+        {props.teamID}
+        {props.team.name}
+      </Typography>
     </Layout>
   );
 }

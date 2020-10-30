@@ -1,9 +1,8 @@
-import pageStyles from "./styles/page.module.scss";
 import React from "react";
 import { GetStaticProps } from "next";
 import Link from "next/link";
 import Layout from "../components/Layout";
-import { Typography } from "@material-ui/core";
+import { Typography, Button } from "@material-ui/core";
 import { PrismaClient, Team } from "@prisma/client";
 
 export const getStaticProps: GetStaticProps = async () => {
@@ -19,15 +18,18 @@ type Props = {
 export default function Home(props: Props) {
   return (
     <Layout>
-      <div className={pageStyles["page"]}>
-        <Typography variant="h3">Teams</Typography>
-        <main>
-          {props.teams?.map((t) => (
-            <Link href={`/teams/${t.id}`}>
-              <a>{t.name}</a>
-            </Link>
-          ))}
-        </main>
+      <Typography variant="h3">Teams</Typography>
+      {props.teams?.map((t) => (
+        <Link href={`/teams/${t.id}`}>
+          <a>{t.name}</a>
+        </Link>
+      ))}
+      <div>
+        <Link href="teams/create">
+          <Button variant="contained" color="primary">
+            Create Team
+          </Button>
+        </Link>
       </div>
     </Layout>
   );

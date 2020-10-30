@@ -1,14 +1,15 @@
 import React, { ReactNode } from "react";
 import Header from "./header/Header";
+import styles from "./header/header.module.scss";
 
 type Props = {
   children: ReactNode;
 };
 
 const Layout: React.FC<Props> = (props) => (
-  <div>
+  <div className={styles["layout"]}>
     <Header />
-    <div className="layout">{props.children}</div>
+    <div className={styles["page"]}>{props.children}</div>
     <style jsx global>{`
       html {
         box-sizing: border-box;
