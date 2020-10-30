@@ -1,0 +1,5 @@
+# Prisma Migrate lockfile v1
+
+20201027070931-init
+20201027071129-remove-post
+20201027071344-add-basic-fields

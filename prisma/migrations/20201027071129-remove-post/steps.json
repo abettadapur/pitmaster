@@ -1,0 +1,28 @@
+{
+  "version": "0.3.14-fixed",
+  "steps": [
+    {
+      "tag": "DeleteModel",
+      "model": "Post"
+    },
+    {
+      "tag": "CreateField",
+      "model": "Team",
+      "field": "users",
+      "type": "User",
+      "arity": "List"
+    },
+    {
+      "tag": "CreateField",
+      "model": "User",
+      "field": "teams",
+      "type": "Team",
+      "arity": "List"
+    },
+    {
+      "tag": "DeleteField",
+      "model": "User",
+      "field": "posts"
+    }
+  ]
+}
